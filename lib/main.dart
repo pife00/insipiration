@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
@@ -103,8 +104,37 @@ class _MyAppState extends State<MyApp> {
                       height: 200,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
-                        children: <Widget>[],
+                        children: <Widget>[
+                          promoCard("assets/images/dog.jpg"),
+                          promoCard("assets/images/cat.jpg"),
+                          promoCard("assets/images/bird.jpg"),
+                          promoCard("assets/images/alce.jpg"),
+                        ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                     Text(
+                      'Best Design',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      height: 130,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/dog.jpg"),
+                            fit: BoxFit.cover),
+                      ),
+                     
                     )
                   ],
                 ),
@@ -112,6 +142,20 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget promoCard(image) {
+    return AspectRatio(
+      aspectRatio: 2 / 3,
+      child: Container(
+        margin: EdgeInsets.only(right: 15.0),
+        decoration: BoxDecoration(
+            color: Colors.orange,
+            borderRadius: BorderRadius.circular(20),
+            image:
+                DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
       ),
     );
   }
