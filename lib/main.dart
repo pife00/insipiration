@@ -35,8 +35,9 @@ class _MyAppState extends State<MyApp> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
-              ),
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.vertical(bottom: Radius.circular(20))),
               padding: EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,25 +52,64 @@ class _MyAppState extends State<MyApp> {
                   SizedBox(
                     height: 3,
                   ),
-                  Text("Inspiration",
-                  style: TextStyle(color:Colors.black,fontSize: 40),
+                  Text(
+                    "Inspiration",
+                    style: TextStyle(color: Colors.black, fontSize: 40),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Container(
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color:Color.fromRGBO(244, 243, 242, 1),
-                      borderRadius: BorderRadius.circular(15)
-                    ),
+                        color: Color.fromRGBO(244, 243, 242, 1),
+                        borderRadius: BorderRadius.circular(15)),
                     child: TextField(
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        prefixIcon: Icon(Icons.search, color: Colors.black87,),
-                      ),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Colors.black87,
+                          ),
+                          hintText: "Search what you need",
+                          hintStyle: TextStyle(fontSize: 15)),
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Promo Today',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
